@@ -13,6 +13,7 @@ specifiers:
   nodemon: 2.0.20
   pino: 8.6.0
   pino-pretty: 9.1.0
+  prettier: 2.7.1
   ts-node: 10.9.1
   tsconfig-paths: 4.1.0
   typescript: 4.8.3
@@ -33,6 +34,7 @@ devDependencies:
   eslint: 8.23.1
   nodemon: 2.0.20
   pino-pretty: 9.1.0
+  prettier: 2.7.1
   ts-node: 10.9.1_bidgzm5cq2du6gnjtweqqjrrn4
   typescript: 4.8.3
 
@@ -1483,6 +1485,12 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /process-warning/2.0.0:

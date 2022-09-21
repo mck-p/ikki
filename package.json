@@ -9,6 +9,7 @@
     "eslint": "8.23.1",
     "nodemon": "2.0.20",
     "pino-pretty": "9.1.0",
+    "prettier": "2.7.1",
     "ts-node": "10.9.1",
     "typescript": "4.8.3"
   },
@@ -17,7 +18,10 @@
     "dev::generic-service": "nodemon --ext \".ts\" --watch \"apps/$APP_NAME\" --exec \"APP_NAME=$APP_NAME PORT=$PORT ts-node -r tsconfig-paths/register apps/$APP_NAME/start.ts\" | pino-pretty",
     "dev::api": "APP_NAME=api PORT=5001 yarn dev::generic-service",
     "dev::client": "APP_NAME=client PORT=5000 yarn dev::generic-service",
-    "dev": "concurrently --kill-others -n \"API,CLIENT\" \"yarn dev::api\" \"yarn dev::client\""
+    "dev": "concurrently --kill-others -n \"API,CLIENT\" \"yarn dev::api\" \"yarn dev::client\"",
+    "fmt": "prettier --write ./{apps,modules}/**/*.ts",
+    "check-formatting": "prettier --check ./{apps,modules}/**/*.ts",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "express": "4.18.1",
