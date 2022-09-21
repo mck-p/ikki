@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  code-styling:
+  ci:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -29,3 +29,5 @@ jobs:
       run: yarn run check-formatting
     - name: Run Format Check
       run: yarn run check-types
+    - name: Run Unit Test Suite
+      run: yarn run test

@@ -5,6 +5,7 @@
     "@types/node": "18.7.18",
     "@typescript-eslint/eslint-plugin": "5.38.0",
     "@typescript-eslint/parser": "5.38.0",
+    "ava": "4.3.3",
     "concurrently": "7.4.0",
     "eslint": "8.23.1",
     "nodemon": "2.0.20",
@@ -21,12 +22,24 @@
     "dev": "concurrently --kill-others -n \"API,CLIENT\" \"yarn dev::api\" \"yarn dev::client\"",
     "fmt": "prettier --write ./{apps,modules}/**/*.ts",
     "check-formatting": "prettier --check ./{apps,modules}/**/*.ts",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "test::generic-service": "ava ./apps/$APP_NAME/**/*.test.ts",
+    "test::api": "APP_NAME=api yarn test::generic-service",
+    "test::client": "APP_NAME=client yarn test::generic-service",
+    "test": "yarn test::api && yarn test::client"
   },
   "dependencies": {
     "express": "4.18.1",
     "getenv": "1.0.0",
     "pino": "8.6.0",
     "tsconfig-paths": "4.1.0"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
